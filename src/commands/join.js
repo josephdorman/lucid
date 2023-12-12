@@ -4,7 +4,7 @@ const { joinVoiceChannel } = require("@discordjs/voice");
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("join")
-    .setDescription("Joins a Voice Channel")
+    .setDescription("Joins a voice channel")
     .addChannelOption((option) =>
       option
         .setName("channel")
