@@ -20,16 +20,10 @@ client.on("ready", () => {
   console.log(`[INFO] ${client.user.id} has logged in!`);
 });
 
-async function main() {
-  // holds all commands, this array has the commands parsed to JSON so it is able to be send to discord
-  // REST api to update and show commands in body, and logs bot in, throws error is anything is wrong
-  try {
-    registerCommands();
-    interactionCreate(client);
-    client.login(BOT_TOKEN);
-  } catch (err) {
-    console.log(err);
-  }
-}
+// registercommands only needs to be ran whenever a commands gets updated
+registerCommands();
 
-main();
+// set up interactionCreate event listener, this will be turned into a event handeler to listen to
+// every event and not just interactionCreate
+interactionCreate(client);
+client.login(BOT_TOKEN);
