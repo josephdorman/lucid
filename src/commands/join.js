@@ -1,26 +1,24 @@
-const { SlashCommandBuilder, ChannelType } = require("discord.js");
+const { SlashCommandBuilder } = require("discord.js");
 const { joinVoiceChannel } = require("@discordjs/voice");
 
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("join")
-    .setDescription("Joins a voice channel")
-    .addChannelOption((option) =>
-      option
-        .setName("channel")
-        .setDescription("The channel to join")
-        .setRequired(true)
-        .addChannelTypes(ChannelType.GuildVoice)
-    ),
+    .setDescription("Joins a voice channel"),
   async execute(interaction) {
-    const voiceChannel = interaction.options.getChannel("channel");
+    console.log(interaction.member.voice.channel);
+    const channel = interaction.member.voice.channel;
+
+    if (!channel) {
+      return await interaction.reply("You are not in a voice channel");
+    }
+
     const voiceConnection = await joinVoiceChannel({
-      channelId: voiceChannel.id,
+      channelId: channel.id,
       guildId: interaction.guild.id,
       adapterCreator: interaction.guild.voiceAdapterCreator,
     });
 
-    await interaction.reply(`Joined ${voiceChannel}`);
-    console.log(voiceConnection);
+    await interaction.reply(`Joined ${channel}`);
   },
 };
