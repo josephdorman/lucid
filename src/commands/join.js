@@ -6,7 +6,6 @@ module.exports = {
     .setName("join")
     .setDescription("Joins a voice channel"),
   async execute(interaction) {
-    console.log(interaction.member.voice.channel);
     const channel = interaction.member.voice.channel;
 
     if (!channel) {
