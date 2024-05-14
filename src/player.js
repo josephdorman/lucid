@@ -16,6 +16,11 @@ module.exports = async (client) => {
         `Now playing \`${song.name}\` - \`${song.formattedDuration}\``
       )
     )
+    .on("addSong", (queue, song) =>
+      queue.textChannel.send(
+        `Added \`${song.name}\` - \`${song.formattedDuration}\` to the queue by ${song.user}`
+      )
+    )
     .on("error", (channel, e) => {
       if (channel)
         channel.send(`An error encountered: ${e.toString().slice(0, 1974)}`);
