@@ -10,9 +10,15 @@ module.exports = async (client) => {
     plugins: [new YtDlpPlugin()],
   });
 
-  client.distube.on("playSong", (queue, song) =>
-    queue.textChannel.send(
-      `Now playing \`${song.name}\` - \`${song.formattedDuration}\``
+  client.distube
+    .on("playSong", (queue, song) =>
+      queue.textChannel.send(
+        `Now playing \`${song.name}\` - \`${song.formattedDuration}\``
+      )
     )
-  );
+    .on("error", (channel, e) => {
+      if (channel)
+        channel.send(`An error encountered: ${e.toString().slice(0, 1974)}`);
+      else console.error(e);
+    });
 };
