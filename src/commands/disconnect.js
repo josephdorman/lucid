@@ -1,18 +1,19 @@
 const { SlashCommandBuilder } = require("discord.js");
-const { getVoiceConnection } = require("@discordjs/voice");
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName("leave")
-    .setDescription("Leaves the voice channel"),
+    .setName("dc")
+    .setDescription("Disconnects from the voice channel"),
   async execute(interaction) {
-    const voiceConnection = await getVoiceConnection(interaction.guild.id);
+    try {
+      // Possibly add restrictions here
+      // Ex. if member is not in same VC as bot, restrict the command (don't dc bot)
 
-    if (!voiceConnection) {
-      return await interaction.reply("Bot currently not in a voice channel");
+      await interaction.client.distube.voices.leave(interaction);
+
+      await interaction.reply("Disconnected from the voice channel");
+    } catch (e) {
+      return await interaction.reply("Something went wrong...");
     }
-
-    voiceConnection.destroy();
-    await interaction.reply("Left the voice channel");
   },
 };
