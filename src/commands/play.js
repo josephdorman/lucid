@@ -15,13 +15,25 @@ module.exports = {
       const query = interaction.options.getString("query");
       const channel = interaction.member.voice.channel;
 
-      interaction.client.distube.play(channel, query, {
+      if (!channel) {
+        return await interaction.reply({
+          content: "You are not in a voice channel",
+          ephemeral: true,
+        });
+      }
+
+      await interaction.reply({
+        content: `Loading \`${query}\``,
+        ephemeral: true,
+      });
+
+      await interaction.client.distube.play(channel, query, {
         member: interaction.member,
         textChannel: interaction.channel,
         interaction,
       });
 
-      await interaction.reply("Now Playing");
+      await interaction.deleteReply();
     } catch (e) {
       await interaction.reply("Something went wrong...");
     }
