@@ -1,5 +1,6 @@
 require("dotenv").config();
 const { Client, GatewayIntentBits } = require("discord.js");
+const player = require("./player");
 const interactionCreate = require("./events/interactionCreate");
 const ready = require("./events/ready");
 const registerCommands = require("./registerCommands");
@@ -16,6 +17,9 @@ const client = new Client({
 
 // Grab env variables
 const { BOT_TOKEN } = process.env;
+
+// Initialize player
+player(client);
 
 // registercommands only needs to be ran whenever a commands gets updated
 registerCommands();

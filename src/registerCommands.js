@@ -7,6 +7,7 @@ module.exports = async () => {
   const { BOT_TOKEN } = process.env;
   const { APP_ID } = process.env;
   const { GUILD_ID } = process.env;
+  const { DEV_GUILD_ID } = process.env;
 
   const files = getAllCommands();
   const commands = [];
@@ -19,7 +20,7 @@ module.exports = async () => {
   });
 
   console.log("Started refreshing application (/) commands.");
-  await rest.put(Routes.applicationGuildCommands(APP_ID, GUILD_ID), {
+  await rest.put(Routes.applicationGuildCommands(APP_ID, DEV_GUILD_ID), {
     body: commands,
   });
 };
