@@ -5,13 +5,13 @@ module.exports = {
     .setName("queue")
     .setDescription("Shows the current queue"),
   async execute(interaction) {
+    const queue = interaction.client.distube.getQueue(interaction);
+
+    if (!queue) {
+      return await interaction.reply("There is no current queue.");
+    }
+
     try {
-      const queue = interaction.client.distube.getQueue(interaction);
-
-      if (!queue) {
-        return await interaction.reply("There is no current queue.");
-      }
-
       // .name, .sourve .formattedDuration, .thumbnail, .url are a few of the properties to access
       const q = queue.songs
         .map(
