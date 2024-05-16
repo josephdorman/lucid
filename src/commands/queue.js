@@ -22,8 +22,6 @@ module.exports = {
         )
         .join("\n");
 
-      console.log(q);
-
       await interaction.reply(`**Server Queue** \n${q}`);
     } catch (e) {
       await interaction.reply("Something went wrong...");
