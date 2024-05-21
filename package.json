@@ -1,10 +1,11 @@
 {
   "name": "lucid",
   "version": "1.0.0",
-  "description": "",
+  "description": "A discord bot that utilizes distube to play audio",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/index.js",
     "startdev": "nodemon ./src/index.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
@@ -13,8 +14,18 @@
     "type": "git",
     "url": "git+https://github.com/josephdorman/lucid.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "music",
+    "audio",
+    "discord",
+    "discordjs",
+    "distube",
+    "musicbot",
+    "music-bot",
+    "bot",
+    "discord-bot"
+  ],
+  "author": "Joseph Dorman (https://github.com/josephdorman)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/josephdorman/lucid/issues"
@@ -36,5 +47,8 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.29.0",
     "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=18.17.0"
   }
 }
