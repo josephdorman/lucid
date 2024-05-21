@@ -23,16 +23,6 @@
     "musicbot",
     "music",
     "bot"
-  
-    "music",
-    "audio",
-    "discord",
-    "discordjs",
-    "distube",
-    "musicbot",
-    "music-bot",
-    "bot",
-    "discord-bot"
   ],
   "author": "Joseph Dorman (https://github.com/josephdorman)Joseph Dorman (https://github.com/josephdorman)",
   "license": "ISC",
@@ -59,8 +49,5 @@
   },
   "engines": {
     "node": ">=18.17"
-  },
-  "engines": {
-    "node": ">=18.17.0"
   }
 }
