@@ -4,7 +4,7 @@
 
 # Commands
 
-Using the command /help in a discord will show all available commands
+Using the command `/help` in a discord will show all available commands
 
 - `/dc` | Disconnects from the voice channel
 - `/help` | Shows all commands available
@@ -20,6 +20,10 @@ Using the command /help in a discord will show all available commands
 
 - Easy to setup and customize
 - Supports over 700+ websites
+
+# Setup
+
+WIP
 
 # Disclaimer
 
