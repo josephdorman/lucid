@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/index.js",
     "startdev": "nodemon ./src/index.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
@@ -22,8 +23,18 @@
     "musicbot",
     "music",
     "bot"
+  
+    "music",
+    "audio",
+    "discord",
+    "discordjs",
+    "distube",
+    "musicbot",
+    "music-bot",
+    "bot",
+    "discord-bot"
   ],
-  "author": "Joseph Dorman (https://github.com/josephdorman)",
+  "author": "Joseph Dorman (https://github.com/josephdorman)Joseph Dorman (https://github.com/josephdorman)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/josephdorman/lucid/issues"
@@ -48,5 +59,8 @@
   },
   "engines": {
     "node": ">=18.17"
+  },
+  "engines": {
+    "node": ">=18.17.0"
   }
 }
