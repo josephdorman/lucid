@@ -21,16 +21,14 @@ Using the command `/help` in a discord will show all available commands
 - Easy to setup and customize
 - Supports over 700+ websites
 
-# Setup
-
-This is just a quick setup to configuration of the bot and will not show how to host the bot, create new commands, etc as it is not within the scope of this setup, i will provide more resources and details regarding that on the wiki [here](https://github.com/josephdorman/lucid/wiki).
-
-Located in the main directory you will find `config.json`, in which you will replace the placeholder values (ex. BOT_TOKEN_HERE) with your own.
+# Configuration
 
 > [!CAUTION]
 > **NEVER** share this information with anyone or display it publicly. If you intend to host this bot elsewhere and not on your host machine I **HIGHLY** suggest using dotenv instead of this config.json to prevent leaking this information, more details [here](https://github.com/josephdorman/lucid/wiki).
 
-config.json
+Located in the main directory you will find `config.json`, in which you will replace the placeholder values (ex. BOT_TOKEN_HERE) with your own.
+
+`config.json`
 
 ```json
 {
@@ -39,6 +37,8 @@ config.json
   "GUILD_ID": "GUILD_ID_HERE"
 }
 ```
+
+I'm not going to cover how to create new commands or host this bot, etc, information on that will be on the wiki located [here](https://github.com/josephdorman/lucid/wiki).
 
 # Disclaimer
 
