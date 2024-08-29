@@ -1,12 +1,12 @@
-require("dotenv").config();
 const { REST, Routes } = require("discord.js");
 const getAllCommands = require("./utils/getAllCommands");
+const config = require("../config.json");
 
 module.exports = async () => {
   // Grab env variables
-  const { BOT_TOKEN } = process.env;
-  const { APP_ID } = process.env;
-  const { GUILD_ID } = process.env;
+  const { BOT_TOKEN } = config;
+  const { APP_ID } = config;
+  const { GUILD_ID } = config;
 
   const files = getAllCommands();
   const commands = [];

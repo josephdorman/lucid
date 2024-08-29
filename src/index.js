@@ -1,9 +1,9 @@
-require("dotenv").config();
 const { Client, GatewayIntentBits } = require("discord.js");
 const player = require("./player");
 const interactionCreate = require("./events/interactionCreate");
 const ready = require("./events/ready");
 const registerCommands = require("./registerCommands");
+const config = require("../config.json");
 
 // Set intents for the bot
 const client = new Client({
@@ -16,7 +16,7 @@ const client = new Client({
 });
 
 // Grab env variables
-const { BOT_TOKEN } = process.env;
+const { BOT_TOKEN } = config;
 
 // Initialize player
 player(client);
