@@ -27,7 +27,8 @@ This is just a quick setup to configuration of the bot and will not show how to 
 
 Located in the main directory you will find `config.json`, in which you will replace the placeholder values (ex. BOT_TOKEN_HERE) with your own.
 
-> [!CAUTION] **NEVER** share this information with anyone or display it publicly. If you intend to host this bot elsewhere and not on your host machine I **HIGHLY** suggest using dotenv instead of this config.json to prevent leaking this information, more details [here](https://github.com/josephdorman/lucid/wiki).
+> [!CAUTION]
+> **NEVER** share this information with anyone or display it publicly. If you intend to host this bot elsewhere and not on your host machine I **HIGHLY** suggest using dotenv instead of this config.json to prevent leaking this information, more details [here](https://github.com/josephdorman/lucid/wiki).
 
 config.json
 
